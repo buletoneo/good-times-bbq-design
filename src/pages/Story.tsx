@@ -3,15 +3,21 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import trustedImage from "@/assets/trusted-service.jpg";
 import corporateImage from "@/assets/corporate-event.jpg";
+import bannerImage from "@/assets/banner-story.jpg";
 
 const Story = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative py-24 md:py-32 bg-secondary">
-        <div className="container-custom px-4">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${bannerImage})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="container-custom px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
               Our <span className="text-primary">Story</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl">

@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import bannerImage from "@/assets/banner-contact.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -20,10 +21,15 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative py-24 md:py-32 bg-secondary">
-        <div className="container-custom px-4">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${bannerImage})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="container-custom px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
               Contact <span className="text-primary">Us</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl">
